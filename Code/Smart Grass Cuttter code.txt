@@ -1,0 +1,92 @@
+// Motor pins
+const int motor1PinA = 3; // Motor 1 forward
+const int motor1PinB = 5; // Motor 1 backward
+const int motor2PinA = 6; // Motor 2 forward
+const int motor2PinB = 9; // Motor 2 backward
+
+// Grass cutter motor pin
+const int grassCutterMotor = 7;
+
+// Ultrasonic sensor pins
+const int trigPin = 8; // Trigger pin
+const int echoPin = 10; // Echo pin
+
+// Threshold distance for obstacle detection (in cm)
+const int thresholdDistance = 20;
+
+void setup() {
+  // Motor pins as output
+  pinMode(motor1PinA, OUTPUT);
+  pinMode(motor1PinB, OUTPUT);
+  pinMode(motor2PinA, OUTPUT);
+  pinMode(motor2PinB, OUTPUT);
+
+  // Grass cutter motor pin as output
+  pinMode(grassCutterMotor, OUTPUT);
+
+  // Ultrasonic sensor pins
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+
+  // Start grass cutter motor
+  digitalWrite(grassCutterMotor, HIGH);
+
+  // Start Serial communication for debugging
+  Serial.begin(9600);
+}
+
+void loop() {
+  int distance = measureDistance();
+
+  if (distance > thresholdDistance) {
+    // No obstacle: move forward
+    moveForward();
+  } else {
+    // Obstacle detected: turn right
+    stopMotors();
+    delay(500);
+    turnRight();
+    delay(1000); // Adjust time to complete the turn
+  }
+}
+
+// Function to measure distance using ultrasonic sensor
+int measureDistance() {
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  long duration = pulseIn(echoPin, HIGH);
+  int distance = duration * 0.034 / 2; // Convert to cm
+
+  Serial.print("Distance: ");
+  Serial.println(distance);
+
+  return distance;
+}
+
+// Move forward
+void moveForward() {
+  digitalWrite(motor1PinA, HIGH);
+  digitalWrite(motor1PinB, LOW);
+  digitalWrite(motor2PinA, HIGH);
+  digitalWrite(motor2PinB, LOW);
+}
+
+// Turn right
+void turnRight() {
+  digitalWrite(motor1PinA, HIGH);
+  digitalWrite(motor1PinB, LOW);
+  digitalWrite(motor2PinA, LOW);
+  digitalWrite(motor2PinB, HIGH);
+}
+
+// Stop motors
+void stopMotors() {
+  digitalWrite(motor1PinA, LOW);
+  digitalWrite(motor1PinB, LOW);
+  digitalWrite(motor2PinA, LOW);
+  digitalWrite(motor2PinB, LOW);
+}

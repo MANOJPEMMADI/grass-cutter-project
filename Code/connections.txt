@@ -1,0 +1,34 @@
+
+For your smart grass cutter project using an Arduino, motor driver, ultrasonic sensor, and servo motor, here's the wiring breakdown based on the code:
+
+1. Arduino Pins
+Left Motor (connected to the L298N motor driver):
+LeftMotorForward (pin 7) → IN1 of L298N
+LeftMotorBackward (pin 6) → IN2 of L298N
+Right Motor (connected to the L298N motor driver):
+RightMotorForward (pin 5) → IN3 of L298N
+RightMotorBackward (pin 4) → IN4 of L298N
+Servo Motor:
+Control signal → Pin 10 of Arduino
+Ultrasonic Sensor:
+Trig → Analog Pin A1 of Arduino
+Echo → Analog Pin A2 of Arduino
+2. Motor Driver (L298N) Connections:
+Power (12V, GND, 5V):
+Connect the motor power supply to the +12V and GND pins of the L298N motor driver.
+Connect the 5V pin from L298N to the Arduino's 5V pin.
+Motor Output:
+Connect the left motor to the OUT1 and OUT2 pins.
+Connect the right motor to the OUT3 and OUT4 pins.
+3. Ultrasonic Sensor (HC-SR04):
+Trig Pin: Connect the Trig pin of the ultrasonic sensor to analog pin A1.
+Echo Pin: Connect the Echo pin of the ultrasonic sensor to analog pin A2.
+VCC: Connect VCC to the 5V pin of the Arduino.
+GND: Connect GND to the GND pin of the Arduino.
+4. Servo Motor (SG90 or similar):
+Control Pin: Connect the control pin of the servo motor to digital pin 10 on the Arduino.
+VCC: Connect VCC to the 5V pin of the Arduino.
+GND: Connect GND to the GND pin of the Arduino.
+5. Power Supply:
+Ensure your power source is sufficient to drive the motors and electronics (usually a 12V battery for motors and using the onboard Arduino regulator for the logic circuits).
+This setup should align with the code provided and control the motors and sensors correctly for obstacle detection and motor movement in your grass cutter project.
