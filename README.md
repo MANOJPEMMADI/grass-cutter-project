@@ -26,3 +26,33 @@ An intelligent, Arduino-controlled grass cutter designed to automate lawn mainte
 
 ## 📁 Folder Structure
 
+
+## 📷 Project Preview
+
+*(Insert images here if available, e.g., photos of the grass cutter or screenshots)*
+
+## 🧠 Working Principle
+
+The ultrasonic sensor detects any obstacle in the path. Based on the input, the Arduino Uno decides whether to move forward, stop, or turn left/right. The grass-cutting motor continuously spins during motion, trimming grass as the chassis moves autonomously over a defined area.
+
+## 🎯 Objective
+
+To design and implement an autonomous, eco-friendly grass cutter that reduces human effort, avoids obstacles, and works efficiently in garden environments.
+
+## 📚 Documentation
+
+- ✅ Final Report
+- ✅ Poster for Project Expo
+- ✅ IEEE-style Presentation Slides
+
+## 🧑‍🔧 Developed By
+
+**Manoj Pemmadi**  
+Department of Electronics and Communication Engineering  
+(For academic IEEE conference submission)
+
+## 📄 License
+
+This project is licensed for educational and research purposes. Contact the author for reuse or modifications.
+
+
