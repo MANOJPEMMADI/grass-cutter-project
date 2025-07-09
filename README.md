@@ -24,9 +24,6 @@ An intelligent, Arduino-controlled grass cutter designed to automate lawn mainte
 | Rechargeable Battery  | Power supply for motors and Arduino   |
 | Chassis               | Frame of the smart cutter             |
 
-## 📁 Folder Structure
-
-
 ## 📷 Project Preview
 
 *(Insert images here if available, e.g., photos of the grass cutter or screenshots)*
@@ -50,9 +47,4 @@ To design and implement an autonomous, eco-friendly grass cutter that reduces hu
 **Manoj Pemmadi**  
 Department of Electronics and Communication Engineering  
 (For academic IEEE conference submission)
-
-## 📄 License
-
-This project is licensed for educational and research purposes. Contact the author for reuse or modifications.
-
 
